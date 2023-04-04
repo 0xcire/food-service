@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy 
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +17,10 @@ jobs:
       - name: Install
         run: npm install
 
-        # lint?
-
-        # test?
-
-      -name: Build
+      - name: Build
         run: npm run build
 
-      -name: Deploy 🚀
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
