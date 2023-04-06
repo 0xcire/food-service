@@ -10,7 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.1.9"
+    "astro": "^2.1.9",
+    "hamburgers": "^1.2.1",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
