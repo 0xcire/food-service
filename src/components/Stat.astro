@@ -1,0 +1,31 @@
+---
+interface Props {
+  category: string;
+  amount: string;
+}
+
+const { category, amount } = Astro.props;
+---
+
+<div class="stat">
+  <p class="stat__amount">{amount}</p>
+  <p class="stat__category">{category}</p>
+</div>
+
+<style lang="scss">
+  .stat {
+    margin: 1rem;
+    font-size: 1.6rem;
+
+    &__amount {
+      font-weight: 700;
+      color: #575757;
+      margin-bottom: 0;
+    }
+
+    &__category {
+      margin-top: 0.5rem;
+      font-size: 1.4rem;
+    }
+  }
+</style>

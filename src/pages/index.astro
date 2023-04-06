@@ -1,13 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="Jez Salad">
-  <Header />
+  <div class="above-fold">
+    <Header />
+    <Hero />
+  </div>
+
   <main>
-    <h1>Skip The Diet, Astro Foods</h1>
+    <p>main</p>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .above-fold {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(246, 238, 228, 1) 75%,
+      rgba(254, 233, 205, 1) 100%
+    );
+  }
+</style>
