@@ -43,6 +43,8 @@ import "../styles/main.scss";
     padding: 0 1rem;
     height: $header-height;
 
+    // overflow: hidden;
+
     @media screen and (min-width: 1024px) {
       padding: 0 5rem;
     }
@@ -106,7 +108,7 @@ import "../styles/main.scss";
     &__nav-wrapper {
       position: absolute;
       top: 100%;
-      left: 0;
+      right: 0;
 
       display: flex;
       flex-direction: column;
@@ -119,17 +121,19 @@ import "../styles/main.scss";
 
       background-color: #f6f6f6;
 
+      overflow: hidden;
       opacity: 0;
-      transform: translate(100%, 0);
-      transition: all 0.25s ease-in-out;
+      transform: scaleX(0);
+      transform-origin: center right;
+      transition: all 0.2s ease-in-out;
 
       @media screen and (min-width: 640px) {
         display: none;
       }
 
       &-show {
+        transform: scaleX(100%);
         opacity: 1;
-        transform: translate(0, 0);
       }
     }
 
