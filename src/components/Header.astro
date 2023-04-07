@@ -175,7 +175,6 @@ import "../styles/main.scss";
 </style>
 
 <script>
-  let documentWidth = window.innerWidth;
   const hamburger = document.querySelector(".hamburger");
   const navWrapper = document.querySelector(".header__nav-wrapper");
   const mobileNavLinks = document.querySelectorAll(".mobile-link") as NodeListOf<Element>;
@@ -183,11 +182,16 @@ import "../styles/main.scss";
   function toggleClasses() {
     hamburger?.classList.toggle("is-active");
     navWrapper?.classList.toggle("header__nav-wrapper-show");
+
+    if (hamburger?.classList.contains("is-active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
   }
 
-  hamburger?.addEventListener("click", function (this: HTMLButtonElement) {
-    this.classList.toggle("is-active");
-    navWrapper?.classList.toggle("header__nav-wrapper-show");
+  hamburger?.addEventListener("click", () => {
+    toggleClasses();
   });
 
   for (let i = 0; i < mobileNavLinks.length; i++) {

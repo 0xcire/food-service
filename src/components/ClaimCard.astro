@@ -1,0 +1,93 @@
+---
+interface Props {
+  img: string;
+  title: string;
+  description: string;
+}
+
+const { img, title, description } = Astro.props;
+---
+
+<div class="card">
+  <div class="card__icon">
+    <img
+      src={img}
+      alt="card-icon"
+    />
+  </div>
+  <div class="card__content">
+    <h2 class="card__title">{title}</h2>
+    <p class="card__description">{description}</p>
+    <button class="card__cta"> Learn More &rarr;</button>
+  </div>
+
+  <style lang="scss">
+    .card {
+      // max-width: 365px;
+      margin: 1rem 0;
+      padding: 3rem;
+      border-radius: 50px;
+      background-color: #fff;
+      border: 1px solid #ffe8c8;
+      transition: all 0.1s ease;
+
+      @media screen and (min-width: 640px) {
+        max-width: 365px;
+        margin: 0;
+        flex-basis: 45%;
+      }
+
+      @media screen and (min-width: 1024px) {
+        flex-basis: 30%;
+      }
+
+      &__icon {
+        width: 100px;
+        aspect-ratio: 1/1;
+        background-color: #ffe8c8;
+        border-radius: 20px;
+        padding: 2rem;
+        display: grid;
+        place-items: center;
+      }
+
+      &__title {
+        margin-top: 7rem;
+        color: #2b2b2b;
+        font-size: 2rem;
+      }
+
+      &__description {
+        color: #575757;
+        font-size: 1.4rem;
+      }
+
+      &__cta {
+        margin-top: 2rem;
+        padding: 1rem 1rem 1rem 0;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 1.6rem;
+        color: #575757;
+
+        transition: all 0.1s ease;
+        cursor: pointer;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .card:hover {
+        transform: scale(1.01);
+        filter: drop-shadow(0 50px 80px #976d0033);
+
+        & .card__cta {
+          padding: 1.5rem;
+          background-color: #fb9333;
+          border-radius: 100px;
+          color: #fff;
+        }
+      }
+    }
+  </style>
+</div>
