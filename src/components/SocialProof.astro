@@ -1,0 +1,289 @@
+---
+import headShot from "../assets/social/social.webp";
+import SocialCard from "./social-proof/SocialCard.astro";
+
+const reviews = [
+  {
+    img: headShot,
+    name: "Selena",
+    age: "22 years",
+    review:
+      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
+  },
+  {
+    img: headShot,
+    name: "David Ken",
+    age: "24 years",
+    review:
+      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
+  },
+  {
+    img: headShot,
+    name: "Jennifer Sina",
+    age: "21 years",
+    review:
+      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
+  },
+  {
+    img: headShot,
+    name: "Billy Bob",
+    age: "100 years",
+    review:
+      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
+  },
+  {
+    img: headShot,
+    name: "Dana White",
+    age: "42 years",
+    review:
+      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
+  },
+];
+---
+
+<section
+  id="social-proof"
+  class="social"
+>
+  <div class="social__text">
+    <h1 class="social__title">What Are People Saying <span>About Us</span></h1>
+    <p class="social__description">
+      We are very happy if you are satisfied with our service and products,
+      let's read pure reviews from customers who bought our products.
+    </p>
+    <div class="social__controls">
+      <div class="social__tracker">
+        <p class="social__current">01</p>
+        <span>/</span>
+        <p class="social__total">05</p>
+      </div>
+      <div class="social__buttons">
+        <button class="social__left">&larr;</button>
+        <button class="social__right">&rarr;</button>
+      </div>
+    </div>
+  </div>
+  <div class="social__reviews-wrapper">
+    <div class="social__reviews">
+      {
+        reviews.map((review, index) => (
+          <SocialCard
+            img={review.img}
+            name={review.name}
+            age={review.age}
+            review={review.review}
+            key={index + 1}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .social {
+    padding: 6rem 1rem;
+    background-color: #fff6ea;
+
+    @media screen and (min-width: 640px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 6rem 0rem 6rem 1rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding: 8rem 0rem 8rem 5rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 12rem 0rem 12rem 8rem;
+    }
+
+    @media screen and (min-width: 1536px) {
+      padding: 12rem 0rem 12rem 13rem;
+    }
+
+    &__text {
+      @media screen and (min-width: 640px) {
+        flex-basis: 50%;
+      }
+
+      @media screen and (min-width: 1024px) {
+        flex-basis: 35%;
+      }
+
+      @media screen and (min-width: 1536px) {
+        flex-basis: 30%;
+      }
+    }
+
+    &__title {
+      @media screen and (min-width: 1024px) {
+        font-size: 3.2rem;
+      }
+      @media screen and (min-width: 1280px) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &__title span {
+      color: #fb9333;
+    }
+
+    &__description {
+      color: #999999;
+      font-size: 1.6rem;
+    }
+
+    &__controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      @media screen and (min-width: 640px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &__tracker {
+      display: flex;
+      align-items: baseline;
+
+      font-size: 1.4rem;
+    }
+
+    &__current {
+      color: #333333;
+      font-size: 2rem;
+      font-weight: 700;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 3.2rem;
+      }
+      @media screen and (min-width: 1280px) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &__tracker span {
+      margin: 0 0.5rem;
+    }
+
+    &__tracker span,
+    &__total {
+      color: #cccccc;
+    }
+
+    &__left,
+    &__right {
+      padding: 1.25rem;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+
+      font-size: 2rem;
+      color: #fff;
+
+      cursor: pointer;
+
+      transition: all 0.1s ease;
+    }
+
+    &__left {
+      background-color: #ffc87a;
+    }
+
+    &__right {
+      background-color: #fb9333;
+    }
+
+    &__left:hover,
+    &__right:hover {
+      transform: scale(1.05);
+    }
+
+    &__reviews-wrapper {
+      overflow: hidden;
+      width: 275px;
+      margin: 2rem auto 0 auto;
+
+      @media screen and (min-width: 640px) {
+        // width: 100%;
+        // flex: 1;
+        margin: 0;
+        flex-basis: 50%;
+      }
+    }
+
+    &__reviews {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      margin-top: 6rem;
+
+      @media screen and (min-width: 640px) {
+        width: 275px;
+      }
+    }
+  }
+</style>
+
+<script>
+  const updateCurrentIndex = (currentIndex: number) => {
+    const current = document.querySelector(".social__current") as HTMLElement;
+    if (current) {
+      current.textContent = `0${currentIndex.toString()}`;
+    }
+  };
+
+  const updateTextAndCycle = (
+    current: number,
+    reviews: NodeListOf<HTMLElement>
+  ) => {
+    updateCurrentIndex(current + 1);
+
+    for (let i = 0; i < reviews.length; i += 1) {
+      reviews[i].style.transform = `translateX(${110 * (i - current)}%)`;
+    }
+  };
+
+  const handleReviewCarousel = () => {
+    const reviews = document.querySelectorAll(
+      ".social-card"
+    ) as NodeListOf<HTMLElement>;
+    const next = document.querySelector(".social__right");
+    const previous = document.querySelector(".social__left");
+
+    let current = 0;
+    const end = reviews.length - 1;
+
+    for (let i = 0; i < reviews.length; i += 1) {
+      reviews[i].style.transform = `translateX(${i * 110}%)`;
+    }
+
+    next?.addEventListener("click", () => {
+      if (current === end) {
+        current = 0;
+      } else {
+        current += 1;
+      }
+
+      updateTextAndCycle(current, reviews);
+    });
+
+    previous?.addEventListener("click", () => {
+      if (current === 0) {
+        current = reviews.length - 1;
+      } else {
+        current -= 1;
+      }
+
+      updateTextAndCycle(current, reviews);
+    });
+  };
+  handleReviewCarousel();
+</script>
