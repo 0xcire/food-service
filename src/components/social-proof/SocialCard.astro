@@ -1,0 +1,77 @@
+---
+interface Props {
+  img: string;
+  name: string;
+  age: string;
+  review: string;
+  key: number;
+}
+
+const { img, name, age, review, key } = Astro.props;
+---
+
+<div
+  class="social-card"
+  data-key={`0${key}`}
+>
+  <div class="social-card__img-cover">
+    <img
+      class="social-card__img"
+      src={img}
+      alt={`${name}-img`}
+    />
+  </div>
+
+  <h2 class="social-card__name">{name}</h2>
+  <p class="social-card__age">{age}</p>
+  <p class="social-card__review">{review}</p>
+</div>
+
+<style lang="scss">
+  .social-card {
+    position: absolute;
+
+    // width: 80%;
+
+    // margin: 1rem auto;
+    // margin: 0 3rem;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 12rem 2.5rem 2.5rem 2.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
+
+    &__img-cover {
+      position: absolute;
+      top: -20%;
+      transform: translateY(50%);
+
+      overflow: hidden;
+      width: 9rem;
+      aspect-ratio: 1/1;
+      border-radius: 5px;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__name {
+      font-size: 2.4rem;
+    }
+
+    &__age {
+      font-size: 1.4rem;
+      color: #999999;
+    }
+
+    &__review {
+      font-size: 1.6rem;
+      color: #575757;
+    }
+  }
+</style>
