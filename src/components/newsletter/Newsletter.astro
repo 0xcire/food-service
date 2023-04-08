@@ -1,0 +1,188 @@
+---
+import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
+---
+
+<section
+  id="newsletter"
+  class="newsletter"
+>
+  <div class="newsletter__content-wrapper">
+    <div class="newsletter__content">
+      <p class="newsletter__heading">Our Subscribe</p>
+      <h1 class="newsletter__title">
+        Subscribe To Get The Latest Promo from Jez Salad
+      </h1>
+      <p class="newsletter__sub-title">
+        We recommended you to subscribe to our promo program, drop your email
+        below to get daily update about us
+      </p>
+      <form class="newsletter__input">
+        <input
+          id="email"
+          type="email"
+          class="newsletter__input"
+          placeholder="Enter your email address"
+          required
+        />
+        <button
+          type="submit"
+          class="newsletter__input-btn"
+          >Subscribe</button
+        >
+      </form>
+    </div>
+
+    <div class="newsletter__bg">
+      <img
+        class="newsletter__img"
+        src={newsletterBg}
+        alt="newsletter-bg"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .newsletter {
+    padding: 3rem 1rem;
+
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      padding: 4rem 5rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 6rem 8rem;
+    }
+
+    @media screen and (min-width: 1536px) {
+      padding: 10rem 13rem;
+    }
+
+    &__content-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 4rem 3rem 8rem 3rem;
+      background-color: #fff1de;
+      border-radius: 50px;
+      z-index: 10;
+    }
+
+    &__content {
+      @media screen and (min-width: 1024px) {
+        width: 60%;
+        margin: 0 auto;
+      }
+      @media screen and (min-width: 1280px) {
+        width: 70%;
+      }
+      @media screen and (min-width: 1536px) {
+        width: 50%;
+      }
+    }
+
+    &__heading {
+      font-size: 1.6rem;
+      color: #fb9333;
+
+      @media screen and (min-width: 1280px) {
+        font-size: 2rem;
+      }
+    }
+
+    &__title {
+      color: #585858;
+      line-height: 140%;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 3.2rem;
+      }
+      @media screen and (min-width: 1280px) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &__sub-title {
+      width: 95%;
+      margin: 2rem auto 6rem auto;
+
+      font-size: 1.4rem;
+      color: #575757;
+
+      line-height: 160%;
+
+      @media screen and (min-width: 1280px) {
+        width: 60%;
+        margin: 2rem auto 8rem auto;
+      }
+    }
+
+    &__input {
+      position: relative;
+    }
+
+    &__input input {
+      padding: 1.5rem 2rem;
+      width: 100%;
+      border: none;
+      border-radius: 100px;
+
+      font-size: 1.6rem;
+    }
+
+    &__input-btn {
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      transform: translate(0, -50%);
+
+      border-radius: 100px;
+      background-color: #fb9333;
+      color: #fff;
+
+      border: none;
+      height: 85%;
+      width: 25%;
+
+      font-size: 1.4rem;
+
+      cursor: pointer;
+    }
+
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: -3%;
+
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+
+      z-index: -1;
+    }
+
+    &__img {
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  document
+    .querySelector(".newsletter__input")
+    ?.addEventListener("submit", function (this: HTMLFormElement, e: Event) {
+      // input type='email' invalid, no submit event fires
+      if (!e) return;
+
+      e.preventDefault();
+      // form submission logic here ---
+      this.reset();
+    });
+</script>
