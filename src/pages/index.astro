@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Claims from "../components/Claims.astro";
-import SocialProof from "../components/SocialProof.astro";
+import Hero from "../components/hero/Hero.astro";
+import Claims from "../components/claims/Claims.astro";
+import SocialProof from "../components/social-proof/SocialProof.astro";
+import Menu from "../components/menu/Menu.astro";
 ---
 
 <Layout title="Jez Salad">
@@ -15,7 +16,10 @@ import SocialProof from "../components/SocialProof.astro";
   <main>
     <Claims />
     <SocialProof />
+    <Menu />
+    <!-- <Newsletter /> -->
   </main>
+  <!-- <Footer />f -->
 </Layout>
 
 <style>

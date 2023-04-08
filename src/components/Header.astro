@@ -4,17 +4,36 @@ import "../styles/main.scss";
 
 <header class="header">
   <h1 class="header__title">
-    <a class="header__title-link" href="#"><span class="header__title-jez">jez</span>salad</a>
+    <a
+      class="header__title-link"
+      href="#"
+      ><span class="header__title-jez">jez</span>salad</a
+    >
   </h1>
 
   <nav class="header__nav header__nav-desktop">
-    <a href="#" class="header__nav-link">Menu</a>
-    <a href="#" class="header__nav-link">Contact</a>
-    <a href="#" class="header__nav-link">About Us</a>
+    <a
+      href="#"
+      class="header__nav-link"
+      >Menu</a
+    >
+    <a
+      href="#"
+      class="header__nav-link"
+      >Contact</a
+    >
+    <a
+      href="#"
+      class="header__nav-link"
+      >About Us</a
+    >
   </nav>
   <button class="header__sign-up header__sign-up-desktop">Sign Up</button>
 
-  <button class="hamburger hamburger--slider header__hamburger" type="button">
+  <button
+    class="hamburger hamburger--slider header__hamburger"
+    type="button"
+  >
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
@@ -22,11 +41,25 @@ import "../styles/main.scss";
 
   <div class="header__nav-wrapper">
     <nav class="header__mobile-nav">
-      <a href="#" class="header__nav-link mobile-link">Menu</a>
-      <a href="#" class="header__nav-link mobile-link">Contact</a>
-      <a href="#" class="header__nav-link mobile-link">About Us</a>
+      <a
+        href="#"
+        class="header__nav-link mobile-link"
+        >Menu</a
+      >
+      <a
+        href="#"
+        class="header__nav-link mobile-link"
+        >Contact</a
+      >
+      <a
+        href="#"
+        class="header__nav-link mobile-link"
+        >About Us</a
+      >
     </nav>
-    <button class="header__sign-up header__sign-up-mobile mobile-link">Sign Up</button>
+    <button class="header__sign-up header__sign-up-mobile mobile-link"
+      >Sign Up</button
+    >
   </div>
 </header>
 
@@ -177,7 +210,9 @@ import "../styles/main.scss";
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navWrapper = document.querySelector(".header__nav-wrapper");
-  const mobileNavLinks = document.querySelectorAll(".mobile-link") as NodeListOf<Element>;
+  const mobileNavLinks = document.querySelectorAll(
+    ".mobile-link"
+  ) as NodeListOf<Element>;
 
   function toggleClasses() {
     hamburger?.classList.toggle("is-active");
