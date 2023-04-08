@@ -1,0 +1,67 @@
+---
+interface Props {
+  img: string;
+  title: string;
+  price: string;
+}
+
+const { img, title, price } = Astro.props;
+---
+
+<div class="menu-item">
+  <img
+    class="menu-item__pic"
+    src={img}
+    alt="menu item pic"
+    loading="lazy"
+  />
+  <div class="menu-item__description">
+    <h3 class="menu-item__title">{title}</h3>
+    <p class="menu-item__price">{price}</p>
+  </div>
+
+  <style lang="scss"></style>
+</div>
+
+<style lang="scss">
+  .menu-item {
+    position: relative;
+    width: 100%;
+    max-width: 375px;
+    margin: 2rem auto;
+    flex-grow: 1;
+
+    @media screen and (min-width: 1024px) {
+      margin: 0;
+      flex: 1;
+    }
+
+    &__pic {
+      width: 100%;
+      border-radius: 50px;
+      filter: grayscale(70%);
+    }
+
+    &__description {
+      position: absolute;
+      bottom: 10%;
+      color: #fff;
+
+      margin-left: 3rem;
+
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin: 0 0 1rem 0;
+    }
+
+    &__price {
+      font-size: 4rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+</style>
