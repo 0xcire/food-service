@@ -1,0 +1,157 @@
+---
+import pin from "../../assets/footer/map-pin.svg";
+import mail from "../../assets/footer/mail.svg";
+import phone from "../../assets/footer/phone.svg";
+import twitter from "../../assets/footer/twitter.svg";
+import linkedin from "../../assets/footer/linkedin.svg";
+import instagram from "../../assets/footer/instagram.svg";
+---
+
+<footer class="footer">
+  <div class="footer__company">
+    <h4 class="footer__company-title"><span>JEZ</span> SALAD</h4>
+    <p class="footer__company-description">
+      Jez Salad is the pioneer of healthy fruit salad with high nutrition.
+    </p>
+  </div>
+  <div class="footer__features">
+    <h4 class="footer__features-title">Feature</h4>
+    <p class="footer__features-link">Menu</p>
+    <p class="footer__features-link">Promo</p>
+    <p class="footer__features-link">Contact</p>
+  </div>
+  <div class="footer__contact">
+    <h4 class="footer__contact-title">Get in Touch</h4>
+    <div class="footer__contact-location">
+      <img
+        src={pin}
+        alt="map-pin icon"
+        loading="lazy"
+      />
+      <p>8819 Ohio St. South Gate, CA 90280</p>
+    </div>
+    <div class="footer__contact-email">
+      <img
+        src={mail}
+        alt="mail-icon"
+        loading="lazy"
+      />
+      <p>Ourstudio@hello.com</p>
+    </div>
+    <div class="footer__contact-phone">
+      <img
+        src={phone}
+        alt="phone-icon"
+        loading="lazy"
+      />
+      <p>+0 123-456-7890</p>
+    </div>
+  </div>
+  <div class="footer__socials">
+    <div class="footer__socials-icons">
+      <img
+        src={twitter}
+        alt="twitter-icon"
+        loading="lazy"
+      />
+      <img
+        src={linkedin}
+        alt="linkedin-icon"
+        loading="lazy"
+      />
+      <img
+        src={instagram}
+        alt="instagram-icon"
+        loading="lazy"
+      />
+    </div>
+    <p class="footer__socials-text">Follow our social media.</p>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding: 1rem;
+
+    color: #575757;
+    font-size: 1.4rem;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (min-width: 640px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding: 2rem 5rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 4rem 8rem;
+    }
+
+    @media screen and (min-width: 1536px) {
+      padding: 8rem 13rem;
+    }
+
+    &__features,
+    &__contact,
+    &__socials {
+      margin-top: 4rem;
+    }
+
+    &__company {
+      &-title {
+        font-size: 1.8rem;
+
+        @media screen and (min-width: 1280px) {
+          font-size: 2.4rem;
+        }
+      }
+
+      &-title span {
+        color: #fb9333;
+      }
+
+      @media screen and (min-width: 640px) {
+        flex-basis: 100%;
+      }
+
+      @media screen and (min-width: 1024px) {
+        flex-basis: 20%;
+      }
+    }
+
+    &__features,
+    &__contact {
+      &-title {
+        color: #fb9333;
+      }
+    }
+
+    &__features-title,
+    &__contact-title {
+      margin: 0;
+    }
+
+    &__contact {
+      &-location,
+      &-email,
+      &-phone {
+        display: flex;
+        align-items: center;
+      }
+
+      &-location p,
+      &-email p,
+      &-phone p {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+</style>
