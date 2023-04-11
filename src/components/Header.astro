@@ -63,7 +63,7 @@
 </header>
 
 <style lang="scss">
-  $header-height: 85px;
+  @import "../styles/common.scss";
 
   .header {
     position: relative;
@@ -72,19 +72,17 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 1rem;
+    padding: 0 $sm-padding-x;
     height: $header-height;
 
-    @media screen and (min-width: 1024px) {
-      padding: 0 5rem;
+    @include devices(lg) {
+      padding: 0 $lg-padding-x;
     }
-
-    @media screen and (min-width: 1280px) {
-      padding: 0 8rem;
+    @include devices(xl) {
+      padding: 0 $xl-padding-x;
     }
-
-    @media screen and (min-width: 1440px) {
-      padding: 0 13rem;
+    @include devices(2xl) {
+      padding: 0 $_2xl-padding-x;
     }
 
     &__title {
@@ -103,15 +101,18 @@
       }
     }
 
-    &__hamburger {
-      @media screen and (min-width: 640px) {
+    &__hamburger,
+    &__nav-wrapper,
+    &__mobile-nav,
+    &__sign-up-mobile {
+      @include devices(sm) {
         display: none;
       }
     }
 
     &__nav-desktop,
     &__sign-up-desktop {
-      @media screen and (max-width: 640px) {
+      @include devices(max-sm) {
         display: none;
       }
     }
@@ -129,7 +130,7 @@
 
       cursor: pointer;
 
-      @media screen and (min-width: 640px) {
+      @includes devices(sm) {
         margin: 0;
         height: 60%;
       }
@@ -157,10 +158,6 @@
       transform-origin: center right;
       transition: all 0.2s ease-in-out;
 
-      @media screen and (min-width: 640px) {
-        display: none;
-      }
-
       &-show {
         transform: scaleX(100%);
         opacity: 1;
@@ -183,23 +180,16 @@
       color: #333;
       font-size: 1.6rem;
       text-decoration: none;
+    }
 
-      @media screen and (min-width: 640px) {
-        margin: 0 1rem;
-        padding: 1rem;
-      }
+    &__nav-desktop &__nav-link {
+      margin: 0 1rem;
+      padding: 1rem;
     }
 
     &__sign-up-mobile {
       display: block;
       margin: 0 auto;
-    }
-
-    &__mobile-nav,
-    &__sign-up-mobile {
-      @media screen and (min-width: 640px) {
-        display: none;
-      }
     }
   }
 </style>

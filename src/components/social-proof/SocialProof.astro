@@ -1,44 +1,7 @@
 ---
-import headShot from "../../assets/social/social.webp";
 import SocialCard from "./SocialCard.astro";
 
-const reviews = [
-  {
-    img: headShot,
-    name: "Selena",
-    age: "22 years",
-    review:
-      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-  },
-  {
-    img: headShot,
-    name: "David Ken",
-    age: "24 years",
-    review:
-      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-  },
-  {
-    img: headShot,
-    name: "Jennifer Sina",
-    age: "21 years",
-    review:
-      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-  },
-  {
-    img: headShot,
-    name: "Billy Bob",
-    age: "100 years",
-    review:
-      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-  },
-  {
-    img: headShot,
-    name: "Dana White",
-    age: "42 years",
-    review:
-      "The salad is fresh!!! Don't ask about the sauce again, it's really delicious, it's going to be routine. I recommend this salad to all of you guys! because they really take care of the quality.",
-  },
-];
+import { reviews } from "../../data/data";
 ---
 
 <section
@@ -83,41 +46,42 @@ const reviews = [
 </section>
 
 <style lang="scss">
+  @import "../../styles/common.scss";
   .social {
-    padding: 6rem 1rem;
+    padding: 6rem $sm-padding-x;
     background-color: #fff6ea;
     overflow: hidden;
 
-    @media screen and (min-width: 640px) {
+    @include devices(sm) {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 6rem 0rem 6rem 1rem;
+      padding: 6rem 0rem 6rem $sm-padding-x;
     }
 
-    @media screen and (min-width: 1024px) {
-      padding: 8rem 0rem 8rem 5rem;
+    @include devices(lg) {
+      padding: 8rem 0rem 8rem $lg-padding-x;
     }
 
-    @media screen and (min-width: 1280px) {
-      padding: 12rem 0rem 12rem 8rem;
+    @include devices(xl) {
+      padding: 12rem 0rem 12rem $xl-padding-x;
     }
 
-    @media screen and (min-width: 1440px) {
-      padding: 12rem 0rem 12rem 13rem;
+    @include devices(2xl) {
+      padding: 12rem 0rem 12rem $_2xl-padding-x;
     }
 
     &__text {
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         flex-basis: 48%;
       }
 
-      @media screen and (min-width: 1024px) {
+      @include devices(lg) {
         flex-basis: 35%;
       }
 
-      @media screen and (min-width: 1536px) {
+      @include devices(3xl) {
         flex-basis: 30%;
       }
     }
@@ -134,7 +98,8 @@ const reviews = [
       color: #999999;
       font-size: 1.6rem;
       line-height: 150%;
-      @media screen and (min-width: 1280px) {
+
+      @include devices(lg) {
         width: 94%;
       }
     }
@@ -145,7 +110,7 @@ const reviews = [
       justify-content: center;
       gap: 2rem;
 
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -206,7 +171,7 @@ const reviews = [
       width: 275px;
       margin: 2rem auto 0 auto;
 
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         margin: 0;
         flex-basis: 50%;
       }
@@ -218,7 +183,7 @@ const reviews = [
       width: 100%;
       margin-top: 6rem;
 
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         width: 275px;
       }
     }

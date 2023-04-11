@@ -44,21 +44,22 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
 </section>
 
 <style lang="scss">
+  @import "../../styles/common.scss";
   .newsletter {
-    padding: 3rem 1rem;
+    padding: 3rem $sm-padding-x;
 
     text-align: center;
 
-    @media screen and (min-width: 1024px) {
-      padding: 4rem 5rem;
+    @include devices(lg) {
+      padding: 4rem $lg-padding-x;
     }
 
-    @media screen and (min-width: 1280px) {
-      padding: 6rem 8rem;
+    @include devices(xl) {
+      padding: 6rem $xl-padding-x;
     }
 
-    @media screen and (min-width: 1440px) {
-      padding: 10rem 13rem;
+    @include devices(2xl) {
+      padding: 10rem $_2xl-padding-x;
     }
 
     &__content-wrapper {
@@ -73,14 +74,16 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
     }
 
     &__content {
-      @media screen and (min-width: 1024px) {
+      @include devices(lg) {
         width: 60%;
         margin: 0 auto;
       }
-      @media screen and (min-width: 1280px) {
+
+      @include devices(xl) {
         width: 70%;
       }
-      @media screen and (min-width: 1536px) {
+
+      @include devices(3xl) {
         width: 50%;
       }
     }
@@ -104,7 +107,7 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
       color: #575757;
       line-height: 160%;
 
-      @media screen and (min-width: 1280px) {
+      @include devices(xl) {
         width: 60%;
         margin: 2rem auto 8rem auto;
       }
@@ -157,19 +160,18 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
     }
 
     &__img {
-      @media screen and (max-width: 1024px) {
-        display: none;
-      }
-
       height: 120%;
       width: 100%;
+
+      @include devices(lg) {
+        display: none;
+      }
     }
   }
 
   .hidden {
     opacity: 0;
     transform: scale(0.9);
-    // width: 0;
   }
 </style>
 
