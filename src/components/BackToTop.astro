@@ -2,22 +2,23 @@
 import chevron from "../assets/chevron-up.svg";
 ---
 
-<button
+<a
   class="back-to-top"
-  type="button"
-  ><a href="#header"
-    ><img
-      src={chevron}
-      alt="chevron"
-    /></a
-  ></button
->
+  href="#header"
+  ><img
+    src={chevron}
+    alt="chevron"
+  />
+</a>
 
 <style>
   .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    display: grid;
+    place-items: center;
+
     width: 50px;
     height: 50px;
 
@@ -44,8 +45,3 @@ import chevron from "../assets/chevron-up.svg";
     color: #fff;
   }
 </style>
-
-<script>
-  import observer from "../utils/observer";
-  const hero = document.querySelector("#hero");
-</script>
