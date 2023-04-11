@@ -1,11 +1,12 @@
 ---
 import Stat from "./Stat.astro";
 import heroSvg from "../../assets/hero.svg";
+
 const stats = [
   { category: "Customers", amount: "5,000+" },
   { category: "Deliveries", amount: "8,000+" },
   { category: "Ratings", amount: "1,000+" },
-];
+] as const;
 ---
 
 <section
@@ -64,7 +65,7 @@ const stats = [
       padding: 0 8rem 8rem 8rem;
     }
 
-    @media screen and (min-width: 1536px) {
+    @media screen and (min-width: 1440px) {
       padding: 0 13rem 8rem 13rem;
     }
 
@@ -73,8 +74,8 @@ const stats = [
         flex-basis: 50%;
       }
 
-      @media screen and (min-width: 1536px) {
-        flex-basis: 50%;
+      @media screen and (min-width: 1440px) {
+        flex-basis: 60%;
       }
     }
 
@@ -92,16 +93,8 @@ const stats = [
     }
 
     &__title {
-      font-size: 4rem;
+      font-size: clamp(4rem, 5vw, 7.2rem);
       color: #575757;
-
-      @media screen and (min-width: 1280px) {
-        font-size: 5.4rem;
-      }
-
-      @media screen and (min-width: 1536px) {
-        font-size: 7.2rem;
-      }
     }
 
     &__title span {
@@ -109,7 +102,10 @@ const stats = [
     }
 
     &__sub-text {
-      font-size: 1.6rem;
+      margin: 3rem 0;
+      width: 80%;
+
+      font-size: clamp(1.6rem, 2vw, 2rem);
       color: #828282;
     }
 
@@ -128,8 +124,15 @@ const stats = [
     }
 
     &__stats {
+      margin-top: 4rem;
+
       @media screen and (min-width: 640px) {
         display: flex;
+      }
+
+      @media screen and (min-width: 1280px) {
+        margin-top: 8rem;
+        gap: 3rem;
       }
     }
 

@@ -30,16 +30,11 @@ const { img, name, age, review, key } = Astro.props;
 <style lang="scss">
   .social-card {
     position: absolute;
-
-    // width: 80%;
-
-    // margin: 1rem auto;
-    // margin: 0 3rem;
-    height: 100%;
-    width: 100%;
     top: 0;
     left: 0;
-    padding: 12rem 2.5rem 2.5rem 2.5rem;
+
+    width: 100%;
+    padding: 12rem 2.5rem 3.2rem 2.5rem;
     background-color: #fff;
     border-radius: 8px;
 
@@ -50,10 +45,10 @@ const { img, name, age, review, key } = Astro.props;
       top: -20%;
       transform: translateY(50%);
 
-      overflow: hidden;
-      width: 9rem;
+      max-height: 90px;
       aspect-ratio: 1/1;
       border-radius: 5px;
+      overflow: hidden;
     }
 
     &__img {
@@ -70,8 +65,10 @@ const { img, name, age, review, key } = Astro.props;
     }
 
     &__review {
+      margin-bottom: 0;
       font-size: 1.6rem;
       color: #575757;
+      line-height: 150%;
     }
   }
 </style>

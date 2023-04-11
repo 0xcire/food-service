@@ -23,7 +23,6 @@ const { img, title, description } = Astro.props;
 
   <style lang="scss">
     .card {
-      // max-width: 365px;
       margin: 1rem 0;
       padding: 3rem;
       border-radius: 50px;
@@ -42,13 +41,13 @@ const { img, title, description } = Astro.props;
       }
 
       &__icon {
+        display: grid;
+        place-items: center;
+        padding: 2rem;
         width: 100px;
         aspect-ratio: 1/1;
         background-color: #ffe8c8;
         border-radius: 20px;
-        padding: 2rem;
-        display: grid;
-        place-items: center;
       }
 
       &__title {
@@ -59,7 +58,8 @@ const { img, title, description } = Astro.props;
 
       &__description {
         color: #575757;
-        font-size: 1.4rem;
+        font-size: clamp(1.4rem, 2vw, 1.6rem);
+        line-height: 180%;
       }
 
       &__cta {

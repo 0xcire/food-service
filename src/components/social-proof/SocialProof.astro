@@ -101,13 +101,13 @@ const reviews = [
       padding: 12rem 0rem 12rem 8rem;
     }
 
-    @media screen and (min-width: 1536px) {
+    @media screen and (min-width: 1440px) {
       padding: 12rem 0rem 12rem 13rem;
     }
 
     &__text {
       @media screen and (min-width: 640px) {
-        flex-basis: 50%;
+        flex-basis: 48%;
       }
 
       @media screen and (min-width: 1024px) {
@@ -120,12 +120,7 @@ const reviews = [
     }
 
     &__title {
-      @media screen and (min-width: 1024px) {
-        font-size: 3.2rem;
-      }
-      @media screen and (min-width: 1280px) {
-        font-size: 4.8rem;
-      }
+      font-size: clamp(2rem, 3.5vw, 4.8rem);
     }
 
     &__title span {
@@ -135,6 +130,9 @@ const reviews = [
     &__description {
       color: #999999;
       font-size: 1.6rem;
+      @media screen and (min-width: 1280px) {
+        width: 94%;
+      }
     }
 
     &__controls {
@@ -158,15 +156,8 @@ const reviews = [
 
     &__current {
       color: #333333;
-      font-size: 2rem;
+      font-size: clamp(2rem, 3.5vw, 4.8rem);
       font-weight: 700;
-
-      @media screen and (min-width: 1024px) {
-        font-size: 3.2rem;
-      }
-      @media screen and (min-width: 1280px) {
-        font-size: 4.8rem;
-      }
     }
 
     &__tracker span {
@@ -212,8 +203,6 @@ const reviews = [
       margin: 2rem auto 0 auto;
 
       @media screen and (min-width: 640px) {
-        // width: 100%;
-        // flex: 1;
         margin: 0;
         flex-basis: 50%;
       }
@@ -221,7 +210,7 @@ const reviews = [
 
     &__reviews {
       position: relative;
-      height: 400px;
+      height: 450px;
       width: 100%;
       margin-top: 6rem;
 

@@ -1,5 +1,4 @@
 ---
-import "../styles/main.scss";
 ---
 
 <header class="header">
@@ -76,8 +75,6 @@ import "../styles/main.scss";
     padding: 0 1rem;
     height: $header-height;
 
-    // overflow: hidden;
-
     @media screen and (min-width: 1024px) {
       padding: 0 5rem;
     }
@@ -86,22 +83,22 @@ import "../styles/main.scss";
       padding: 0 8rem;
     }
 
-    @media screen and (min-width: 1536px) {
+    @media screen and (min-width: 1440px) {
       padding: 0 13rem;
     }
 
     &__title {
-      font-weight: 400;
-      font-size: 24px;
+      font-size: clamp(1.8rem, 2vw, 2.4rem);
+      font-weight: 700;
+      text-transform: uppercase;
 
       &-link {
         text-decoration: none;
-        color: #000;
+        color: #585858;
       }
 
       &-jez {
-        color: orange;
-        font-weight: 700;
+        color: #fb9333;
         margin-right: 1rem;
       }
     }
