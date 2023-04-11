@@ -43,7 +43,7 @@ const items = [
       padding: 6rem 8rem;
     }
 
-    @media screen and (min-width: 1536px) {
+    @media screen and (min-width: 1440px) {
       padding: 10rem 13rem;
     }
 
@@ -53,21 +53,17 @@ const items = [
     }
 
     &__banner {
-      font-size: 1.6rem;
-
-      @media screen and (min-width: 1280px) {
-        font-size: 2rem;
-      }
+      font-size: clamp(1.6rem, 2vw, 2rem);
     }
 
     &__title {
+      font-size: clamp(2rem, 3.5vw, 4.8rem);
+      line-height: 140%;
       @media screen and (min-width: 1024px) {
-        font-size: 3.2rem;
         width: 60%;
         margin: 0 auto;
       }
       @media screen and (min-width: 1280px) {
-        font-size: 4.8rem;
         width: 70%;
       }
     }
@@ -76,11 +72,11 @@ const items = [
       margin-top: 7rem;
 
       @media screen and (min-width: 640px) {
-        width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 0 1rem;
+        width: 100%;
       }
     }
   }
