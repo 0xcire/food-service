@@ -12,8 +12,8 @@ const items = [
   id="menu"
   class="menu"
 >
-  <p class="menu__banner">MENU YANG MEMBUATMU JATUH CINTA</p>
-  <h1 class="menu__title">
+  <p class="menu__banner menu_el hidden">MENU YANG MEMBUATMU JATUH CINTA</p>
+  <h1 class="menu__title menu_el hidden">
     ENJOY THE BEST MENU AND GET <span>DISCOUNTS</span> AVAILABLE
   </h1>
   <div class="menu__items">
@@ -80,4 +80,21 @@ const items = [
       }
     }
   }
+
+  .menu_el {
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.29, 1.75);
+  }
+
+  .hidden {
+    opacity: 0;
+    transform: translate(0, 10%);
+  }
 </style>
+
+<script>
+  import observer from "../../utils/observer";
+
+  const menuElements = document.querySelectorAll(".menu_el");
+  console.log(menuElements);
+  menuElements.forEach((element) => observer.observe(element));
+</script>

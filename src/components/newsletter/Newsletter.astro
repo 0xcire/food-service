@@ -112,6 +112,7 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
 
     &__input {
       position: relative;
+      transition: all 0.5s ease;
     }
 
     &__input input {
@@ -164,9 +165,16 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
       width: 100%;
     }
   }
+
+  .hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    // width: 0;
+  }
 </style>
 
 <script>
+  import observer from "../../utils/observer";
   document
     .querySelector(".newsletter__input")
     ?.addEventListener("submit", function (this: HTMLFormElement, e: Event) {
@@ -177,4 +185,8 @@ import newsletterBg from "../../assets/newsletter/newsletter-bg.svg";
       // form submission logic here ---
       this.reset();
     });
+
+  const input = document.querySelector(".newsletter__input") as Element;
+
+  observer.observe(input);
 </script>
