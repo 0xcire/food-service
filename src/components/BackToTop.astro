@@ -1,0 +1,51 @@
+---
+import chevron from "../assets/chevron-up.svg";
+---
+
+<button
+  class="back-to-top"
+  type="button"
+  ><a href="#header"
+    ><img
+      src={chevron}
+      alt="chevron"
+    /></a
+  ></button
+>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 100%;
+    border: none;
+
+    background-color: #fb9333;
+    font-size: 2rem;
+
+    cursor: pointer;
+    z-index: 100;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  .reveal {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .back-to-top a {
+    color: #fff;
+  }
+</style>
+
+<script>
+  import observer from "../utils/observer";
+  const hero = document.querySelector("#hero");
+</script>

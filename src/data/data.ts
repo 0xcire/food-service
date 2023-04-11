@@ -17,7 +17,7 @@ export const claims = [
     svg: industrySvg,
     title: "Own fruit orchard",
     description:
-      "Langsung dari Kebun Sendiri yang tersebar di setiap provinsi yang memiliki cabang toko Jez Salad.",
+      "The pioneer of healthy fruit salads that are delicious & suitable for all people with the best quality assurance",
   },
   {
     svg: oneSvg,
@@ -29,7 +29,7 @@ export const claims = [
     svg: trophySvg,
     title: "100 Top Brand",
     description:
-      "We are one of the best brands in the Food and Beverage sector in Indonesia.",
+      "The pioneer of healthy fruit salads that are delicious & suitable for all people with the best quality assurance.",
   },
 ] as const;
 

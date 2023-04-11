@@ -153,3 +153,13 @@ import { stats } from "../../data/data";
     display: none;
   }
 </style>
+
+<script>
+  import observer from "../../utils/observer";
+
+  const hero = document.querySelector("#hero");
+  const backToTop = document.querySelector(".back-to-top");
+  const heroElements = [hero, backToTop];
+
+  heroElements.forEach((element) => observer.observe(element));
+</script>
