@@ -46,20 +46,22 @@ const reviews = [
   class="social"
 >
   <div class="social__text">
-    <h1 class="social__title">What Are People Saying <span>About Us</span></h1>
-    <p class="social__description">
+    <h1 class="social__title social_el hidden">
+      What Are People Saying <span>About Us</span>
+    </h1>
+    <p class="social__description social_el hidden">
       We are very happy if you are satisfied with our service and products,
       let's read pure reviews from customers who bought our products.
     </p>
     <div class="social__controls">
       <div class="social__tracker">
-        <p class="social__current">01</p>
-        <span>/</span>
-        <p class="social__total">05</p>
+        <p class="social__current social_el hidden">01</p>
+        <span class="hidden">/</span>
+        <p class="social__total social_el hidden">05</p>
       </div>
       <div class="social__buttons">
-        <button class="social__left">&larr;</button>
-        <button class="social__right">&rarr;</button>
+        <button class="social__left social_el hidden">&larr;</button>
+        <button class="social__right social_el hidden">&rarr;</button>
       </div>
     </div>
   </div>
@@ -130,6 +132,7 @@ const reviews = [
     &__description {
       color: #999999;
       font-size: 1.6rem;
+      line-height: 150%;
       @media screen and (min-width: 1280px) {
         width: 94%;
       }
@@ -218,10 +221,37 @@ const reviews = [
         width: 275px;
       }
     }
+
+    .social_el {
+      transition: all 0.5s cubic-bezier(0.25, 0.1, 0.29, 1.25);
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: translate(10%, 0);
+    }
+
+    .social_el:nth-child(2) {
+      transition-delay: 100ms;
+    }
+    .social_el:nth-child(3) {
+      transition-delay: 250ms;
+    }
+    .social_el:nth-child(4) {
+      transition-delay: 400ms;
+    }
+    .social_el:nth-child(5) {
+      transition-delay: 550ms;
+    }
+    .social_el:nth-child(6) {
+      transition-delay: 700ms;
+    }
   }
 </style>
 
 <script>
+  import observer from "../../utils/observer";
+
   const updateCurrentIndex = (currentIndex: number) => {
     const current = document.querySelector(".social__current") as HTMLElement;
     if (current) {
@@ -275,4 +305,9 @@ const reviews = [
     });
   };
   handleReviewCarousel();
+
+  const socialElements = document.querySelectorAll(".social_el");
+  socialElements.forEach((element) => {
+    observer.observe(element);
+  });
 </script>

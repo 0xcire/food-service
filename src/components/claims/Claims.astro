@@ -30,11 +30,11 @@ const claims = [
   id="claims"
   class="claims"
 >
-  <div class="claims__text">
-    <h1 class="claims__title">
+  <div class="claims__text claims_el">
+    <h1 class="claims__title claims_el hidden">
       why choose us <br /> for <span>your healthy food</span>
     </h1>
-    <p class="claims__sub-text">
+    <p class="claims__sub-text claims_el hidden">
       We continue to consistently choose and maintain the quality of the fruit
       served, so that it remains fresh and nutritious when you eat it.
     </p>
@@ -117,4 +117,22 @@ const claims = [
       }
     }
   }
+
+  .claims_el {
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.29, 1.75);
+  }
+
+  .hidden {
+    opacity: 0;
+    transform: translate(0, 7%);
+  }
 </style>
+
+<script>
+  import observer from "../../utils/observer";
+
+  const claimsElements = document.querySelectorAll(".claims_el");
+  claimsElements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>
