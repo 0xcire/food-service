@@ -1,11 +1,7 @@
 ---
 import MenuCard from "./MenuCard.astro";
-import menuPic from "../../assets/menu/pexels-dapur-melodi-1109197.webp";
-const items = [
-  { pic: menuPic, title: "Mini Salad", price: "$2.99" },
-  { pic: menuPic, title: "Completed Salad ", price: "$3.99" },
-  { pic: menuPic, title: "Red Salad", price: "$4.99" },
-];
+
+import { items } from "../../data/data";
 ---
 
 <section
@@ -30,21 +26,22 @@ const items = [
 </section>
 
 <style lang="scss">
+  @import "../../styles/common.scss";
   .menu {
     padding: 3rem 1rem;
 
     text-align: center;
 
-    @media screen and (min-width: 1024px) {
-      padding: 4rem 5rem;
+    @include devices(lg) {
+      padding: 4rem $lg-padding-x;
     }
 
-    @media screen and (min-width: 1280px) {
-      padding: 6rem 8rem;
+    @include devices(xl) {
+      padding: 4rem $xl-padding-x;
     }
 
-    @media screen and (min-width: 1440px) {
-      padding: 10rem 13rem;
+    @include devices(2xl) {
+      padding: 4rem $_2xl-padding-x;
     }
 
     &__banner,
@@ -59,11 +56,13 @@ const items = [
     &__title {
       font-size: clamp(2rem, 3.5vw, 4.8rem);
       line-height: 140%;
-      @media screen and (min-width: 1024px) {
+
+      @include devices(lg) {
         width: 60%;
         margin: 0 auto;
       }
-      @media screen and (min-width: 1280px) {
+
+      @include devices(xl) {
         width: 70%;
       }
     }
@@ -71,7 +70,7 @@ const items = [
     &__items {
       margin-top: 7rem;
 
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -95,6 +94,5 @@ const items = [
   import observer from "../../utils/observer";
 
   const menuElements = document.querySelectorAll(".menu_el");
-  console.log(menuElements);
   menuElements.forEach((element) => observer.observe(element));
 </script>

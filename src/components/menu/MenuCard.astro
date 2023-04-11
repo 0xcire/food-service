@@ -19,11 +19,10 @@ const { img, title, price } = Astro.props;
     <h3 class="menu-item__title">{title}</h3>
     <p class="menu-item__price">{price}</p>
   </div>
-
-  <style lang="scss"></style>
 </div>
 
 <style lang="scss">
+  @import "../../styles/common.scss";
   .menu-item {
     position: relative;
     width: 100%;
@@ -31,7 +30,7 @@ const { img, title, price } = Astro.props;
     margin: 2rem auto;
     flex-grow: 1;
 
-    @media screen and (min-width: 1024px) {
+    @include devices(lg) {
       margin: 0;
       flex: 1;
     }

@@ -70,33 +70,30 @@ import instagram from "../../assets/footer/instagram.svg";
 </footer>
 
 <style lang="scss">
+  @import "../../styles/common.scss";
   .footer {
-    padding: 1rem;
+    padding: 1rem $sm-padding-x;
 
     color: #575757;
-    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
 
-    @media screen and (min-width: 1280px) {
-      font-size: 1.6rem;
-    }
-
-    @media screen and (min-width: 640px) {
+    @include devices(sm) {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
     }
 
-    @media screen and (min-width: 1024px) {
-      padding: 2rem 5rem;
+    @include devices(lg) {
+      padding: 2rem $lg-padding-x;
     }
 
-    @media screen and (min-width: 1280px) {
-      padding: 3.5rem 8rem;
+    @include devices(xl) {
+      padding: 3.5rem $xl-padding-x;
     }
 
-    @media screen and (min-width: 1440px) {
-      padding: 5rem 13rem;
+    @include devices(2xl) {
+      padding: 5rem $_2xl-padding-x;
     }
 
     &__company-title,
@@ -117,11 +114,11 @@ import instagram from "../../assets/footer/instagram.svg";
         color: #fb9333;
       }
 
-      @media screen and (min-width: 640px) {
+      @include devices(sm) {
         flex-basis: 100%;
       }
 
-      @media screen and (min-width: 1024px) {
+      @include devices(lg) {
         flex-basis: 20%;
       }
 
