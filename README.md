@@ -22,4 +22,5 @@ Original design file can be found [here](https://www.figma.com/community/file/96
 
 - Wanted to use React or Solid but focused on really limiting bundle size this go around.
 - Some things like figmas layer blur with 800px radius was not replacable with css or svg filters so just making slight adjustments where needed.
+  - At least with all solutions I tried. Seems no changes happen past blur radius or gaussianBlur of 100px.
 - I believe I have an eye for design yet, the ability to realize my ideas is not there yet. So, just proving I can use CSS and recreate designs. Wether that's a landing page for a client, app component from a design team, et cetera.
