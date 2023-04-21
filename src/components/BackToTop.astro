@@ -4,7 +4,7 @@ import chevron from "../assets/chevron-up.svg";
 
 <a
   class="back-to-top"
-  href="#header"
+  href="#"
   ><img
     src={chevron}
     alt="chevron"
@@ -45,3 +45,14 @@ import chevron from "../assets/chevron-up.svg";
     color: #fff;
   }
 </style>
+
+<script>
+  const backToTop = document.querySelector(".back-to-top");
+
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>
