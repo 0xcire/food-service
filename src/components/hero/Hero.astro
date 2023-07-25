@@ -66,6 +66,12 @@ import { stats } from "../../data/data";
       padding: 0 $_2xl-padding-x 8rem $_2xl-padding-x;
     }
 
+    @include devices(3xl) {
+      padding: 0;
+      max-width: 1440px;
+      margin: 8rem auto 0 auto;
+    }
+
     &__left {
       @include devices(sm) {
         flex-basis: 50%;
@@ -161,5 +167,5 @@ import { stats } from "../../data/data";
   const backToTop = document.querySelector(".back-to-top");
   const heroElements = [hero, backToTop];
 
-  heroElements.forEach((element) => observer.observe(element));
+  heroElements.forEach((element) => observer.observe(element as Element));
 </script>

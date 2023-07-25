@@ -44,6 +44,12 @@ import { items } from "../../data/data";
       padding: 4rem $_2xl-padding-x;
     }
 
+    @include devices(3xl) {
+      padding: 4rem 0;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
     &__banner,
     &__title span {
       color: #fb9333;
