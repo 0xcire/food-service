@@ -98,6 +98,12 @@
       padding: 0 $_2xl-padding-x;
     }
 
+    @include devices(3xl) {
+      padding: 0;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
     &__title {
       font-size: clamp(1.8rem, 2vw, 2.4rem);
       font-weight: 700;

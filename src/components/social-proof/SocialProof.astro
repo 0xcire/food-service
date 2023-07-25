@@ -8,39 +8,41 @@ import { reviews } from "../../data/data";
   id="social-proof"
   class="social"
 >
-  <div class="social__text">
-    <h1 class="social__title social_el hidden">
-      What Are People Saying <span>About Us</span>
-    </h1>
-    <p class="social__description social_el hidden">
-      We are very happy if you are satisfied with our service and products,
-      let's read pure reviews from customers who bought our products.
-    </p>
-    <div class="social__controls">
-      <div class="social__tracker">
-        <p class="social__current social_el hidden">01</p>
-        <span class="hidden">/</span>
-        <p class="social__total social_el hidden">05</p>
-      </div>
-      <div class="social__buttons">
-        <button class="social__left social_el hidden">&larr;</button>
-        <button class="social__right social_el hidden">&rarr;</button>
+  <div class="social__content-wrapper">
+    <div class="social__text">
+      <h1 class="social__title social_el hidden">
+        What Are People Saying <span>About Us</span>
+      </h1>
+      <p class="social__description social_el hidden">
+        We are very happy if you are satisfied with our service and products,
+        let's read pure reviews from customers who bought our products.
+      </p>
+      <div class="social__controls">
+        <div class="social__tracker">
+          <p class="social__current social_el hidden">01</p>
+          <span class="hidden">/</span>
+          <p class="social__total social_el hidden">05</p>
+        </div>
+        <div class="social__buttons">
+          <button class="social__left social_el hidden">&larr;</button>
+          <button class="social__right social_el hidden">&rarr;</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="social__reviews-wrapper">
-    <div class="social__reviews">
-      {
-        reviews.map((review, index) => (
-          <SocialCard
-            img={review.img}
-            name={review.name}
-            age={review.age}
-            review={review.review}
-            key={index + 1}
-          />
-        ))
-      }
+    <div class="social__reviews-wrapper">
+      <div class="social__reviews">
+        {
+          reviews.map((review, index) => (
+            <SocialCard
+              img={review.img}
+              name={review.name}
+              age={review.age}
+              review={review.review}
+              key={index + 1}
+            />
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
@@ -52,24 +54,32 @@ import { reviews } from "../../data/data";
     background-color: #fff6ea;
     overflow: hidden;
 
-    @include devices(sm) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    &__content-wrapper {
+      @include devices(sm) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      padding: 6rem 0rem 6rem $sm-padding-x;
-    }
+        padding: 6rem 0rem 6rem $sm-padding-x;
+      }
 
-    @include devices(lg) {
-      padding: 8rem 0rem 8rem $lg-padding-x;
-    }
+      @include devices(lg) {
+        padding: 8rem 0rem 8rem $lg-padding-x;
+      }
 
-    @include devices(xl) {
-      padding: 12rem 0rem 12rem $xl-padding-x;
-    }
+      @include devices(xl) {
+        padding: 12rem 0rem 12rem $xl-padding-x;
+      }
 
-    @include devices(2xl) {
-      padding: 12rem 0rem 12rem $_2xl-padding-x;
+      @include devices(2xl) {
+        padding: 12rem 0rem 12rem $_2xl-padding-x;
+      }
+
+      @include devices(3xl) {
+        padding: 12rem 0rem 12rem 0;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
     }
 
     &__text {
